@@ -1,0 +1,39 @@
+use admin
+
+db.createUser({
+  user: "globalAdminUser",
+  pwd: "5xd49$4%0bef#6c&b*d",
+  roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+});
+
+db.createUser(
+      {
+        user: "clusterAdminUser",
+        pwd: "6@09%aef&5d41!d37",
+        roles: [ { role: "clusterAdmin", db: "admin" } ]
+      }
+   )
+
+db.createUser({
+  user: "reportsUser",
+  pwd: "0acd361e1a0b0a5b2",
+  roles: [ 
+    { role: "read", db: "reports" }  ]
+});
+
+db.createUser({
+  "user": "reportsOwner",
+  "pwd": "2afff82c8e963483c",
+  "roles": [ 
+    { role: "dbOwner", db: "reports" }  
+  ]
+});
+
+db.createUser({
+  "user": "clusterManagerUser",
+  "pwd": "77d3ca475e40a63ad",
+  "roles": [ 
+    { role: "clusterManager", db: "admin" }  
+  ]
+});
+
